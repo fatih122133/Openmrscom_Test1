@@ -3,12 +3,11 @@ package OcElements;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utility.BaseDriver1;
+import Utility.BaseDriver;
 
 
-public class OcElements extends  BaseDriver1{
-    public OcElements() {
-        PageFactory.initElements(BaseDriver1.driver, this);
+public class OcElements extends  BaseDriver{ public OcElements() {
+        PageFactory.initElements(BaseDriver.driver, this);
     }
 
 
@@ -22,6 +21,11 @@ public class OcElements extends  BaseDriver1{
     public WebElement openMrsButton;                                                         //
     @FindBy(xpath = "//span[text()='Enter the OpenMRS 2 Demo']") //Enter openMrs butonu      //
     public WebElement enterOpenMrsButton;
+
+
+    @FindBy(xpath= "//li[@value=' + randomValue +']") // S Location for this session random secim icin
+    public WebElement listItem;
+
     @FindBy(xpath = "//input[@id='username']") //login kısmı username Labelı
     public WebElement userName;
     @FindBy(xpath = "//input[@id='password']")//login kısmı password Labelı
@@ -40,6 +44,78 @@ public class OcElements extends  BaseDriver1{
 
     @FindBy(xpath ="//input[@id='loginButton']") //login buttonu
     public WebElement loginbutton;
+
+    @FindBy (linkText= "Register a patient") //S Hasta kayit kayit butonu
+    public WebElement registerButton;
+
+    @FindBy(css = "input[name='givenName']") //S hasta adi
+    public WebElement givenName;
+
+    @FindBy(css = "input[name='middleName']") //S hasta 2.ad
+    public WebElement middleName;
+
+    @FindBy(css = "input[name='familyName']") //S hasta soyad
+    public WebElement familyName;
+
+    @FindBy(css = "icon.fas.fa-chevron-right") //S devam et butonu
+    public WebElement continueButton1;
+
+    @FindBy(css = "option[value='M']") //S hasta cinsiyet
+    public WebElement male;
+
+    @FindBy(css = "icon.fas.fa-chevron-right") //S devam et butonu
+    public WebElement continueButton2;
+
+    @FindBy(name = "birthdateDay") //S hasta dogum bilgisi
+    public WebElement day;
+
+    @FindBy(name = "birthdateMonth") //S hasta dogum bilgisi
+    public WebElement monthSelect;
+
+    @FindBy(name = "birthdateYear") //S hasta dogum bilgisi
+    public WebElement year;
+
+    @FindBy(css = "icon.fas.fa-chevron-right") //S devam et butonu
+    public WebElement continueButton3;
+
+    @FindBy(id = "address1") //S hasta adres
+    public WebElement address1;
+
+    @FindBy(id = "address2") //S hasta adres
+    public  WebElement address2;
+
+    @FindBy(id = "cityVillage") //S hasta adres
+    public WebElement city;
+
+    @FindBy(id = "stateProvince") //S hasta adres
+    public  WebElement state;
+
+    @FindBy(id = "country") //S hasta adres
+    public WebElement countryField;
+
+    @FindBy(id = "postalCode") //S hasta adres
+    public WebElement postalCode;
+
+    @FindBy(css = "icon.fas.fa-chevron-right") //S devam et butonu
+    public WebElement continueButton4;
+
+    @FindBy(css = "input[name='phoneNumber']") //S hasta telefon numarasi
+    public WebElement phoneNumber;
+
+    @FindBy(css = "icon.fas.fa-chevron-right") //S devam et butonu
+    public WebElement continueButton5;
+
+    @FindBy(id= "relationship_type") // S Hasta yakini relationship
+    public WebElement relationTypeSelect;
+
+    @FindBy(css = "input[ng-model='relationship.name']") //S Hasta refekatci icin
+    public WebElement personName;
+
+    @FindBy(css = "icon.fas.fa-chevron-right") //S devam et butonu
+    public WebElement continueButton6;
+
+    @FindBy(id = "submit") // S kayit onayi icin
+    public WebElement confirm;
 
     @FindBy(xpath = "//a[@id='coreapps-activeVisitsHomepageLink-coreapps-activeVisitsHomepageLink-extension']") //demo anasayfadaki Find Patient Buttonu
     public WebElement findPatient;

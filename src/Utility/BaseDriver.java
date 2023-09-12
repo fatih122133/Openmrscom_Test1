@@ -1,4 +1,5 @@
 package Utility;
+import RunOperations.Test_Case4;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
@@ -7,10 +8,14 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,9 +37,18 @@ public class BaseDriver {
 
         loginTesti();
     }
-
     public void loginTesti() {
-        driver.get("https://demo.openmrs.org/openmrs/login.htm");
+        driver.get("https://openmrs.org/demo/");
+       // driver.get("https://demo.openmrs.org/openmrs/login.htm");
+
+        WebElement demoButton = driver.findElement(By.cssSelector("a[class='zak-button']"));
+        demoButton.click();
+
+        WebElement openMrsButton = driver.findElement(By.xpath ("//span[text()='Explore OpenMRS 2']"));
+        openMrsButton.click();
+
+        WebElement enterOpenMrsButton = driver.findElement(By.xpath ("//span[text()='Enter the OpenMRS 2 Demo']"));
+        enterOpenMrsButton.click();
 
         WebElement inputEmail = driver.findElement(By.name("username"));
         inputEmail.sendKeys("admin");
