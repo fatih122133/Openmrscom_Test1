@@ -4,8 +4,16 @@
 
     <test name="myTest1">
         <classes>
-            <class name="RunOperations.LogoutOperationsTest"> </class>
-            <class name="RunOperations.WrongTimeZoneTest"> </class>
+            <class name="RunOperations.Test_Case1"> </class>
+            <class name="RunOperations.Test_Case2"> </class>
+            <class name="RunOperations.Test_Case3"> </class>
+            <class name="RunOperations.Test_Case4"> </class>
+            <class name="RunOperations.Test_Case5"> </class>
+            <class name="RunOperations.Test_Case6"> </class>
+            <class name="RunOperations.Test_Case7"> </class>
+            <class name="RunOperations.Test_Case8"> </class>
+            <class name="RunOperations.Test_Case9"> </class>
+            <class name="RunOperations.Test_Case10"> </class>
         </classes>
     </test>
 </suite>
