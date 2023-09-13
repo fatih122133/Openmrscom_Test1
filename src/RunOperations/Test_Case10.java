@@ -1,9 +1,16 @@
 package RunOperations;
 
-public class Test_Case10 {
+import OcElements.OcElements;
+import Utility.BaseDriver;
+import Utility.Func;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class Test_Case10 extends BaseDriver {
+    OcElements oc ;
     @Test
     public void wrongTime() {
-        OcElements oc = new OcElements();
 
         //Randevu Planlama sekmesini tiklar.
         oc.appointmentScheduling.click();
