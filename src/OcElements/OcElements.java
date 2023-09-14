@@ -117,6 +117,13 @@ public class OcElements extends  BaseDriver{ public OcElements() {
     @FindBy(id = "submit") // S kayit onayi icin
     public WebElement confirm;
 
+    @FindBy(css = ".PersonName-givenName")
+    public WebElement PatientName;  // S hasta ismi formda gorme
+
+    @FindBy(xpath = "//em[text()='Patient ID']")
+    public WebElement PatientID;     // S hasta kayit numarasini formda gorme
+
+
     @FindBy(xpath = "//a[@id='coreapps-activeVisitsHomepageLink-coreapps-activeVisitsHomepageLink-extension']") //demo anasayfadaki Find Patient Buttonu
     public WebElement findPatient;
 
