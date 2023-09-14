@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import Utility.BaseDriver;
 
 
-public class OcElements extends  BaseDriver{ public OcElements() {
+public class OcElements extends  BaseDriver { public OcElements() {
         PageFactory.initElements(BaseDriver.driver, this);
     }
 

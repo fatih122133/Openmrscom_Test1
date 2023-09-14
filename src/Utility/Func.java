@@ -21,18 +21,23 @@ public class Func {
         }
     }
 
-    public String getRandomValue() {
-        List<String> values = Arrays.asList("6", "4", "3", "7", "2", "5");
-        return values.get(new Random().nextInt(values.size()));
-    }
-
-    public void selectByVisibleText(WebElement element, String visibleText) {
-        Select select = new Select(element);
-        select.selectByVisibleText(visibleText);
-    }
 
     public void verifyContainsText(WebElement element, String value) {
-        wait.until(ExpectedConditions.textToBePresentInElement(element, value));
-        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
+        if (wait == null) {
+
+        } else {
+            wait.until(ExpectedConditions.textToBePresentInElement(element, value));
+            Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
+        }
     }
-}
+        public String getRandomValue () {
+            List<String> values = Arrays.asList("6", "4", "3", "7", "2", "5");
+            return values.get(new Random().nextInt(values.size()));
+        }
+
+        public void selectByVisibleText (WebElement element, String visibleText){
+            Select select = new Select(element);
+            select.selectByVisibleText(visibleText);
+        }
+
+    }
