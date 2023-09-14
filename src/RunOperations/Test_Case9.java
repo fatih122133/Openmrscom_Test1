@@ -13,36 +13,36 @@ public class Test_Case9 extends BaseDriver {
     @Test
     public void Test_Case9() {
 
-        driver.get("https://openmrs.org/");
+     //  driver.get("https://openmrs.org/");
 
-        // WebElement logout=driver.findElement(By.linkText("Logout"));
-        // logout.click();
+     //  // WebElement logout=driver.findElement(By.linkText("Logout"));
+     //  // logout.click();
 
-        WebElement demo = driver.findElement(By.partialLinkText("Demo"));
-        demo.click();
-        Func.Wait(2);
+     //  WebElement demo = driver.findElement(By.partialLinkText("Demo"));
+     //  demo.click();
+     //  Func.Wait(2);
 
-        WebElement explore = driver.findElement(By.linkText("Explore OpenMRS 2"));
-        explore.click();
-        Func.Wait(2);
+     //  WebElement explore = driver.findElement(By.linkText("Explore OpenMRS 2"));
+     //  explore.click();
+     //  Func.Wait(2);
 
-        WebElement exploreDemo = driver.findElement(By.linkText("Enter the OpenMRS 2 Demo"));
-        exploreDemo.click();
-        Func.Wait(2);
+     //  WebElement exploreDemo = driver.findElement(By.linkText("Enter the OpenMRS 2 Demo"));
+     //  exploreDemo.click();
+     //  Func.Wait(2);
 
-        WebElement username = driver.findElement(By.xpath("//input[@id='username']"));
-        username.sendKeys("admin");
-        Func.Wait(2);
-
-
-        WebElement password = driver.findElement(By.xpath("//input[@id='password']"));
-        password.sendKeys("Admin123");
-        Func.Wait(2);
+     //  WebElement username = driver.findElement(By.xpath("//input[@id='username']"));
+     //  username.sendKeys("admin");
+     //  Func.Wait(2);
 
 
-        WebElement login = driver.findElement(By.xpath("//input[@id='loginButton']"));
-        login.click();
-        Func.Wait(2);
+     //  WebElement password = driver.findElement(By.xpath("//input[@id='password']"));
+     //  password.sendKeys("Admin123");
+     //  Func.Wait(2);
+
+
+     //  WebElement login = driver.findElement(By.xpath("//input[@id='loginButton']"));
+     //  login.click();
+     //  Func.Wait(2);
 
         WebElement Reg = driver.findElement(By.cssSelector("ul[id='sessionLocation'] [id='Registration Desk']"));
         Reg.click();
