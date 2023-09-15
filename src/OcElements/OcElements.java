@@ -1,17 +1,14 @@
 package OcElements;
 
+import Utility.BaseDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import Utility.BaseDriver;
-
+import java.util.List;
 
 public class OcElements extends  BaseDriver { public OcElements() {
-        PageFactory.initElements(BaseDriver.driver, this);
-    }
-
-
-
+    PageFactory.initElements(BaseDriver.driver, this);
+}
 
 
     //Locator'lar
@@ -44,6 +41,32 @@ public class OcElements extends  BaseDriver { public OcElements() {
 
     @FindBy(xpath ="//input[@id='loginButton']") //login buttonu
     public WebElement loginbutton;
+
+    @FindBy (xpath ="//span[@class='recent-lozenge']" ) //murat herhangi bir kayitli hastanin lokasyonu
+    public WebElement kayitliHasta;
+
+    @FindBy (xpath="//div[@class='col-11 col-lg-10' and contains(text(), 'Delete Patient')]")  // murat kayitli hasta silme
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "(//p[@class='dialog-instructions'])[2]")
+    public WebElement patientDeletionMessage;
+
+    @FindBy(css = "td.dataTables_empty")
+    public WebElement noMatchingRecordsFound;
+
+    @FindBy (id="delete-reason") //murat hasta kaydi silmek icin delete tusu
+    public WebElement kayitSilme;
+
+    @FindBy (xpath="(//button[@class='confirm right'])[6]") //murat hasta kaydi silmek icin confirm tusu
+    public WebElement ksConfirm;
+
+    @FindBy(css = "div[id='patient-search-results-table_paginate'] >span>a[tabindex]") //murat sayfa sayisi
+    public  List<WebElement> pageNumber;
+    @FindBy(css = "tbody[role='alert']>tr") //murat sayfa satirlari
+    public List<WebElement> sayfaSatirlari;
+
+    @FindBy(id = "patient-search-results-table_info") //murat gosterilen hasta kayitlari
+    public WebElement gosterilenGirisler;
 
     @FindBy (linkText= "Register a patient") //S Hasta kayit kayit butonu
     public WebElement registerButton;
