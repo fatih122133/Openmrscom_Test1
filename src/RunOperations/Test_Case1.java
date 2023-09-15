@@ -2,6 +2,7 @@ package RunOperations;
 
 import Utility.BaseDriver1;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -19,6 +20,7 @@ public class Test_Case1 extends BaseDriver1 {
 
         oc.demoButton.click();
         oc.openMrsButton.click();
+        wait.until(ExpectedConditions.visibilityOf(oc.enterOpenMrsButton));
         oc.enterOpenMrsButton.click();
 
         oc.userName.sendKeys(user);

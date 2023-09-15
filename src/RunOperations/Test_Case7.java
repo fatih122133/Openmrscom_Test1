@@ -6,11 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import OcElements.OcElements;
 
-
 public class Test_Case7 extends BaseDriver1 {
-
     OcElements oc;
-
     @Test
     public void Test_Case7() {
 

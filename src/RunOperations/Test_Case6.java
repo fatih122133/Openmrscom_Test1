@@ -8,20 +8,22 @@ import org.testng.annotations.Test;
 
 public class Test_Case6 extends BaseDriver {
         OcElements ep;
-
         @Test
         public void Test_Case6() {
 
+                OcElements ep=new OcElements();
+
+                wait.until(ExpectedConditions.elementToBeClickable(ep.findPatient));
                 ep.findPatient.click();
-                ep.searchLabelImp.sendKeys("100hm1");
+                ep.searchLabelImp.sendKeys("100J43");
                 Func.Wait(3);
                 wait.until(ExpectedConditions.visibilityOf(ep.patientId));
-                Assert.assertTrue(ep.patientId.getText().contains("100HM1"));
+                Assert.assertTrue(ep.patientId.getText().contains("100J43"));
                 ep.searchLabelImp.clear();
-                ep.searchLabelImp.sendKeys("Ntest hars");
+                ep.searchLabelImp.sendKeys("japonya");
                 Func.Wait(3);
                 wait.until(ExpectedConditions.visibilityOf(ep.patientName));
-                Assert.assertTrue(ep.patientName.getText().contains("NTest hars"));
+                Assert.assertTrue(ep.patientName.getText().toLowerCase().contains("japonya"));
                 ep.searchLabelImp.clear();
                 //--Negative--
                 ep.searchLabelImp.sendKeys("aydıner");

@@ -1,6 +1,8 @@
 package Utility;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -39,5 +41,10 @@ public class Func {
             Select select = new Select(element);
             select.selectByVisibleText(visibleText);
         }
+    public void hoverFunction(WebElement element){
+        Actions actions=new Actions(BaseDriver1.driver);
+        Action action = actions.moveToElement(element).build();
+        action.perform();
+    }
 
     }

@@ -23,11 +23,11 @@ public class BaseDriver1 {
         logger.setLevel(Level.SEVERE); // sadece ERROR ları göster
 
         driver = new ChromeDriver(); // jenkins deyken : sen head olmadan yani hafızada çalış
-        //driver.manage().window().maximize(); // Ekranı max yapıyor.
+        driver.manage().window().maximize(); // Ekranı max yapıyor.
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // 20 sn mühlet: sayfayı yükleme mühlet
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));  // 20 sn mühlet: elementi bulma mühleti
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        driver.get("https://openmrs.org/demo/");
+        driver.get("https://openmrs.org");
 
     }
 
