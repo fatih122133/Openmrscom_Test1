@@ -39,7 +39,6 @@ import org.testng.annotations.Test;
             ep.listItem.click();
 
             ep.loginbutton.click();
-
             ep.registerButton.click();
 
             ep.givenName.sendKeys("Techno");
