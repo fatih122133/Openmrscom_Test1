@@ -86,9 +86,6 @@ public class OcElements extends  BaseDriver { public OcElements() {
     @FindBy(css = "option[value='M']") //S hasta cinsiyet
     public WebElement male;
 
-    @FindBy(css = "icon.fas.fa-chevron-right") //S devam et butonu
-    public WebElement continueButton2;
-
     @FindBy(name = "birthdateDay") //S hasta dogum bilgisi
     public WebElement day;
 
