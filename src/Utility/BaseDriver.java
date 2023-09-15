@@ -1,5 +1,5 @@
 package Utility;
-import RunOperations.Test_Case4;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
@@ -8,14 +8,9 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,7 +25,7 @@ public class BaseDriver {
         logger.setLevel(Level.SEVERE); // sadece ERROR ları göster
 
         driver = new ChromeDriver(); // jenkins deyken : sen head olmadan yani hafızada çalış
-        //driver.manage().window().maximize(); // Ekranı max yapıyor.
+        driver.manage().window().maximize(); // Ekranı max yapıyor.
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // 20 sn mühlet: sayfayı yükleme mühlet
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));  // 20 sn mühlet: elementi bulma mühleti
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -38,7 +33,7 @@ public class BaseDriver {
         loginTesti();
     }
     public void loginTesti() {
-        driver.get("https://openmrs.org/demo/");
+        driver.get("https://openmrs.org");
        // driver.get("https://demo.openmrs.org/openmrs/login.htm");
 
         WebElement demoButton = driver.findElement(By.cssSelector("a[class='zak-button']"));
@@ -53,8 +48,8 @@ public class BaseDriver {
         WebElement inputEmail = driver.findElement(By.name("username"));
         inputEmail.sendKeys("admin");
 
-        WebElement inputpassword = driver.findElement(By.name("password"));
-        inputpassword.sendKeys("Admin123");
+        WebElement inputPassword = driver.findElement(By.name("password"));
+        inputPassword.sendKeys("Admin123");
 
         WebElement locationSesson = driver.findElement(By.xpath("//li[text()='Inpatient Ward']"));
         locationSesson.click();
@@ -80,7 +75,7 @@ public class BaseDriver {
             TakesScreenshot ts = (TakesScreenshot) driver;
             File source = ts.getScreenshotAs(OutputType.FILE);
             String screenshotName = result.getName() + "_" + System.currentTimeMillis() + ".png";
-            File destination = new File("/Users/apple/Desktop/IdeaProjects/OcMRS-Test/src/ErrorSS/scrennShot/" + screenshotName);
+            File destination = new File("C:/Users/fatih/IdeaProjects/Openmrscom_Test1/src/ScreenShot" + screenshotName);
 
             try {
                 FileHandler.copy(source, destination);

@@ -6,12 +6,8 @@ import org.testng.annotations.Test;
 import OcElements.OcElements;
 import org.testng.asserts.SoftAssert;
 
-
-
 public class Test_Case8 extends BaseDriver1 {
-
     OcElements oc;
-
     @Test
     public void Test_Case8() {
         SoftAssert _softassert = new SoftAssert();

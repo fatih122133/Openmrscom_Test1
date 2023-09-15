@@ -10,15 +10,12 @@ public class OcElements extends  BaseDriver { public OcElements() {
     PageFactory.initElements(BaseDriver.driver, this);
 }
 
-
-    //Locator'lar
-    @FindBy(css = "a[class='zak-button']") //Anasayfada sağ üstteki demo butonu            //
-    public WebElement demoButton;                                                            //
-    @FindBy(xpath = "//span[text()='Explore OpenMRS 2']") //Explore openMrs butonu           //  Demo sayfasına ulaşmak için
-    public WebElement openMrsButton;                                                         //
-    @FindBy(xpath = "//span[text()='Enter the OpenMRS 2 Demo']") //Enter openMrs butonu      //
+    @FindBy(css = "a[class='zak-button']") //Anasayfada sağ üstteki demo butonu
+    public WebElement demoButton;
+    @FindBy(xpath = "//span[text()='Explore OpenMRS 2']") //Explore openMrs butonu
+    public WebElement openMrsButton;
+    @FindBy(xpath = "//span[text()='Enter the OpenMRS 2 Demo']") //Enter openMrs butonu
     public WebElement enterOpenMrsButton;
-
 
     @FindBy(xpath= "//li[@value=' + randomValue +']") // S Location for this session random secim icin
     public WebElement listItem;
@@ -68,7 +65,7 @@ public class OcElements extends  BaseDriver { public OcElements() {
     @FindBy(id = "patient-search-results-table_info") //murat gosterilen hasta kayitlari
     public WebElement gosterilenGirisler;
 
-    @FindBy (linkText= "Register a patient") //S Hasta kayit kayit butonu
+    @FindBy (xpath = "//i[@class='icon-user']") //S Hasta kayit kayit butonu
     public WebElement registerButton;
 
     @FindBy(css = "input[name='givenName']") //S hasta adi
@@ -143,27 +140,67 @@ public class OcElements extends  BaseDriver { public OcElements() {
     @FindBy(xpath = "//em[text()='Patient ID']")
     public WebElement PatientID;     // S hasta kayit numarasini formda gorme
 
-
-    @FindBy(xpath = "//a[@id='coreapps-activeVisitsHomepageLink-coreapps-activeVisitsHomepageLink-extension']") //demo anasayfadaki Find Patient Buttonu
+    @FindBy(xpath = "(//div[@id='apps'])/a[1]") //demo anasayfadaki Find Patient Buttonu
     public WebElement findPatient;
 
     @FindBy(xpath = "//input[@id='patient-search']")    // Find Patient içindeki Search byID... Labelı
     public WebElement searchLabelImp;
 
-    @FindBy (xpath = "//td[text()='100HM1']") //Hastanın Id kısmı Assert için.
+    @FindBy (xpath = "(//tr[@class='odd']/td)[1]") //Hastanın Id kısmı Assert için.
     public WebElement patientId;
 
-    @FindBy(xpath = "//td[text()='NTest hars']") //Hastanın Name  kısmı Assert için.
+    @FindBy(xpath = "(//tr[@class='odd']/td)[2]") //Hastanın Name  kısmı Assert için.
     public WebElement patientName;
+
     @FindBy(id = "appointmentschedulingui-homeAppLink-appointmentschedulingui-homeAppLink-extension")// Appointment scheduling butonu
     public WebElement appointmentScheduling;
+
     @FindBy(linkText = "Manage Appointments") // Manage Appointments Butonu
     public WebElement manageAppointments;
+
     @FindBy(id = "patient-search") // Hasta arama için açılan search butonu .
     public WebElement search;
+
     @FindBy(xpath = "//tr[@class='odd']")// aradıgım kullanıcının tıklama Locatoru .
     public  WebElement personClick;
+
     @FindBy(xpath = "//div[@class='note error']//p") //Randevu alırken çıkan büyük  hata
     public WebElement noteerrorMessage;
+
+    @FindBy(css = "icon.fas.fa-chevron-right")
+    public WebElement continueButton2;
+
+    @FindBy(xpath = "//li[@class='nav-item identifier']")
+    public WebElement userIcon;
+
+    @FindBy(linkText = "My Account")
+    public WebElement myAccountIcon;
+
+    @FindBy(xpath ="(//div[@class='col-12 col-sm-12 col-md-12 col-lg-12 homeList']/a)[7]")
+    public WebElement dataMana;
+    @FindBy(xpath="//a[@id='coreapps-mergePatientsHomepageLink-app']")
+    public WebElement  merge;
+
+    @FindBy(xpath="//input[@id='patient1-text']")
+    public WebElement ID1;
+
+    @FindBy(xpath="//input[@id='patient2-text']")
+    public WebElement ID2;
+
+    @FindBy(css ="input[id='confirm-button']")
+    public WebElement contine;
+
+    @FindBy(css ="input[id='confirm-button']")
+    public WebElement contine2;
+
+    @FindBy(css ="div[id='second-patient'] ")
+    public WebElement sag;
+
+    @FindBy(css ="input[id='confirm-button']")
+    public WebElement yes ;
+
+    @FindBy(xpath = "//div[@class='float-sm-right']/span")
+    public WebElement idConfirm;
+
 
 }
