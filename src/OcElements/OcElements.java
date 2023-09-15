@@ -68,7 +68,7 @@ public class OcElements extends  BaseDriver { public OcElements() {
     @FindBy(id = "patient-search-results-table_info") //murat gosterilen hasta kayitlari
     public WebElement gosterilenGirisler;
 
-    @FindBy (linkText= "Register a patient") //S Hasta kayit kayit butonu
+    @FindBy (xpath= "(//i[@class='icon-user'])[2]") //S Hasta kayit kayit butonu
     public WebElement registerButton;
 
     @FindBy(css = "input[name='givenName']") //S hasta adi
@@ -85,6 +85,9 @@ public class OcElements extends  BaseDriver { public OcElements() {
 
     @FindBy(css = "option[value='M']") //S hasta cinsiyet
     public WebElement male;
+
+   // @FindBy(xpath = "(//input[@id='submit'])[1]") //S yeni confirm butonu sonradan eklemisler
+   // public WebElement NewConfirm;
 
     @FindBy(css = "icon.fas.fa-chevron-right") //S devam et butonu
     public WebElement continueButton2;
